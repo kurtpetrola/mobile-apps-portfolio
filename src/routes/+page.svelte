@@ -1,6 +1,29 @@
 <script lang="ts">
 	import MockupGallery from '$lib/components/projects/MockupGallery.svelte';
 	import { projects } from '$lib/data/projects';
+    import { onMount } from 'svelte';
+    import { activeSection } from '$lib/stores';
+
+    onMount(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'home-hero') {
+                         activeSection.set('home');
+                    } else {
+                        activeSection.set(entry.target.id);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '-50% 0px -50% 0px' // Trigger when element is in middle of viewport
+        });
+
+        const sections = document.querySelectorAll('section, #work, #home-hero');
+        sections.forEach(section => observer.observe(section));
+
+        return () => observer.disconnect();
+    });
 </script>
 
 <svelte:head>
@@ -10,14 +33,14 @@
 
 <section class="min-h-screen pb-24 pt-16 md:pt-24 space-y-16 container mx-auto px-4">
     <!-- Hero Section -->
-	<div class="text-center space-y-6 max-w-2xl mx-auto">
+	<section id="home-hero" class="text-center space-y-6 max-w-2xl mx-auto min-h-[35vh] flex flex-col justify-center">
 		<h1 class="text-5xl md:text-7xl font-bold tracking-tighter bg-linear-to-r from-white to-gray-500 bg-clip-text text-transparent">
 			Mobile Crafted.
 		</h1>
 		<p class="text-xl text-muted-foreground leading-relaxed">
 			A showcase of high-performance mobile experiences built with precision and passion.
 		</p>
-	</div>
+	</section>
 
     <!-- Gallery -->
     <div id="work" class="scroll-mt-24 mb-32">
