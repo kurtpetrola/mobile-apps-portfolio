@@ -33,8 +33,8 @@
     });
 </script>
 
-<a bind:this={cardElement} href="/projects/{project.slug}" class="group block relative overflow-hidden rounded-3xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 {visible ? 'border-primary/50 shadow-2xl shadow-primary/10' : ''}">
-	<div class="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 {visible ? 'opacity-100' : ''} transition-opacity duration-500"></div>
+<a bind:this={cardElement} href="/projects/{project.slug}" class="group block relative rounded-3xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 {visible ? 'border-primary/50 shadow-2xl shadow-primary/10' : ''}">
+	<div class="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 {visible ? 'opacity-100' : ''} transition-opacity duration-500 rounded-3xl overflow-hidden"></div>
 	
 	<div class="px-8 pt-8 pb-8 flex flex-col items-center">
 		<div class="relative w-full h-[350px] flex justify-center items-end mt-4 mb-4 group-hover:scale-105 {visible ? 'scale-105' : ''} transition-all duration-500">
