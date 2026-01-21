@@ -61,6 +61,22 @@ export const projects: Project[] = [
         demoUrl: 'https://github.com/kurtpetrola/kuryente-check/releases/'
 	},
 	{
+		slug: 'photo-sharing',
+		title: 'HomeWidgey',
+		category: 'Flutter',
+		tags: ['Flutter', 'Android', 'Firebase'],
+		heroImage: '/images/homewidgey/hw_screenshot1.png',
+        images: [
+            '/images/homewidgey/hw_screenshot1.png',
+            '/images/homewidgey/hw_screenshot2.png',
+            '/images/homewidgey/hw_screenshot3.png'
+        ],
+		description: 'A bold, Neo-Brutalist Flutter app for sharing real-time photos and videos directly to your friends home screen widgets.',
+		content: 'HomeWidgey breaks the mold of traditional social media. No endless feeds, no algorithms—just you, your friends, and their home screens. Designed with a striking Neo-Brutalist aesthetic, it brings a tactile, high-contrast experience to sharing moments.',
+		deviceType: 'android',
+        demoUrl: 'https://github.com/kurtpetrola/homewidgey/releases/'
+	},
+	{
 		slug: 'swift-reviewer',
 		title: 'Swifty',
 		category: 'Kotlin',
