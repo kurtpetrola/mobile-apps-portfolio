@@ -86,13 +86,8 @@
 
 			{#if data.project.content}
 				<div class="prose dark:prose-invert max-w-none">
-					<h3 class="text-2xl font-semibold text-primary mb-4">The Challenge</h3>
+					<h3 class="text-2xl font-semibold text-primary mb-4">About the Project</h3>
 					<p>{data.project.content}</p>
-                    
-                    <!-- Placeholder for robust content rendering -->
-                    <p class="italic text-muted-foreground mt-8">
-                        *Full case study content would be rendered here from Markdown.*
-                    </p>
 				</div>
 			{/if}
 
