@@ -23,8 +23,8 @@ export const projects: Project[] = [
             '/images/fmd/fmd_screenshot2.png',
             '/images/fmd/fmd_screenshot3.png'
         ],
-		description: 'A location-intelligent platform connecting students with safe, verified dormitory accommodations.',
-		content: 'Finding reliable student housing is often a fragmented and stressful experience. Find My Dorm solves this by aggregating dormitory listings into a single, intuitive mobile interface. Built with Flutter for a seamless cross-platform experience, it features location-based filtering, detailed amenity listings, and direct communication channels, empowering students to make informed housing decisions with confidence.',
+		description: 'A location-intelligent platform designed to help students discover and secure safe, verified dormitory accommodations.',
+		content: 'Finding reliable student housing is often a fragmented and stressful experience. Find My Dorm (FMD) bridges this gap by aggregating verified dormitory listings into a single, intuitive mobile interface. Developed with Flutter for a fluid cross-platform experience, it features powerful location-based searches, detailed amenity insights, and seamless communication with property owners, empowering students to find their next home with confidence.',
 		deviceType: 'android',
         demoUrl: 'https://github.com/kurtpetrola/fmd/releases/'
 	},
@@ -39,10 +39,26 @@ export const projects: Project[] = [
             '/images/ace/ace_screenshot2.png',
             '/images/ace/ace_screenshot3.png'
         ],
-		description: 'A streamlined academic management tool helping students track classes, grades, and school announcements.',
-		content: 'Managing academic life involves juggling schedules, assignments, and administrative updates. Academia serves as a centralized digital companion for students, integrating class schedules, grade tracking, and real-time institutional notifications. It transforms the chaotic flow of academic information into an organized, accessible mobile dashboard.',
+		description: 'A comprehensive academic companion designed to help students manage classes, track grades, and stay updated with school announcements.',
+		content: 'Academia Classroom Explorer (ACE) is a centralized digital hub for modern students. It transforms the often-chaotic academic experience by integrating class schedules, real-time grade monitoring, and institutional notifications into a single, streamlined dashboard. ACE ensures students stay organized and informed, allowing them to focus more on learning and less on administrative overhead.',
 		deviceType: 'android',
         demoUrl: 'https://github.com/kurtpetrola/ace/releases/'
+	},
+	{
+		slug: 'electricity-outage-monitoring',
+		title: 'Kuryente Check',
+		category: 'Flutter',
+		tags: ['Flutter', 'Android', 'Firebase'],
+		heroImage: '/images/kuryentecheck/kyc_screenshot1.png',
+        images: [
+            '/images/kuryentecheck/kyc_screenshot1.png',
+            '/images/kuryentecheck/kyc_screenshot2.png',
+            '/images/kuryentecheck/kyc_screenshot3.png'
+        ],
+		description: 'A crowd-sourced mobile platform for real-time monitoring of electricity outages and voltage fluctuations.',
+		content: 'Kuryente Check empowers communities by providing a transparent, real-time reporting system for power issues. Designed specifically for Mangaldan, Pangasinan, the app enables users to report outages and voltage instability immediately, creating a data-driven map of the local power grid state. By crowdsourcing this information, KuryenteCheck facilitates faster responses and keeps the public informed about utility performance.',
+		deviceType: 'android',
+        demoUrl: 'https://github.com/kurtpetrola/kuryente-check/releases/'
 	},
 	{
 		slug: 'swift-reviewer',
@@ -55,8 +71,8 @@ export const projects: Project[] = [
             '/images/swifty/swifty_screenshot2.png',
             '/images/swifty/swifty_screenshot3.png'
         ],
-		description: 'An interactive mobile companion designed to accelerate learning the Swift programming language.',
-		content: 'Learning a new programming language requires consistent practice and accessible references. Swifty acts as a pocket-sized documentation and review tool, breaking down complex Swift concepts into digestible modules. It provides a structured learning path for beginners and serves as a quick syntax reference for developers on the go.',
+		description: 'A simple and interactive Swift programming language reviewer app for developers on the go.',
+		content: 'Swifty is a lightweight mobile companion designed to help developers master the Swift programming language. Whether you are a beginner looking to understand basic syntax or an experienced developer needing a quick refresher, Swifty provides structured modules and interactive reviews. Built with Kotlin, it offers a fast and responsive way to study Swift concepts anytime, anywhere.',
 		deviceType: 'android',
         demoUrl: 'https://github.com/kurtpetrola/Swifty/releases/'
 	},
