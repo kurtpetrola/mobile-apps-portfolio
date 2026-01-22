@@ -13,7 +13,18 @@
 
 <nav class="fixed bottom-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-t border-white/10 pb-safe md:hidden">
     <div class="flex justify-around items-center h-16">
-        <a href="/" class="flex flex-col items-center gap-1 p-2 text-xs font-medium transition-colors {$activeSection === 'home' ? 'text-primary' : 'text-muted-foreground'}">
+        <a 
+            href="/" 
+            onclick={(e) => {
+                if ($page.url.pathname === '/') {
+                    e.preventDefault();
+                    activeSection.set('home');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.replaceState(null, '', '/');
+                }
+            }}
+            class="flex flex-col items-center gap-1 p-2 text-xs font-medium transition-colors {$activeSection === 'home' ? 'text-primary' : 'text-muted-foreground'}"
+        >
             <Home size={20} />
             <span>Home</span>
         </a>

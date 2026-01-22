@@ -5,24 +5,54 @@
     import { activeSection } from '$lib/stores';
 
     onMount(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.id === 'home-hero') {
-                         activeSection.set('home');
+        const updateActiveSection = () => {
+            const sections = ['home-hero', 'work', 'about', 'contact'];
+            const scrollY = window.scrollY;
+            const innerHeight = window.innerHeight;
+
+            // 1. Check if we are at the very bottom -> Contact
+            if ((innerHeight + scrollY) >= document.body.offsetHeight - 50) {
+                activeSection.set('contact');
+                return;
+            }
+
+            // 2. Check if we are at the very top -> Home
+            if (scrollY < 100) {
+                activeSection.set('home');
+                return;
+            }
+
+            // 3. Robust "Center" check
+            // We find the LAST section that has its top edge ABOVE the "active line".
+            // Active line = 35% down the screen.
+            const activeLine = innerHeight * 0.35;
+            
+            let currentSectionId = 'home'; // Default
+
+            for (const id of sections) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    // If the section's top is above the active line, it's a candidate for being "current"
+                    if (rect.top <= activeLine) {
+                        currentSectionId = id === 'home-hero' ? 'home' : id;
                     } else {
-                        activeSection.set(entry.target.id);
+                        // Once we find a section that starts BELOW the line, we stop.
+                        // The previous candidate is the correct one.
+                        break;
                     }
                 }
-            });
-        }, {
-            rootMargin: '-50% 0px -50% 0px' // Trigger when element is in middle of viewport
-        });
+            }
+            activeSection.set(currentSectionId);
+        };
 
-        const sections = document.querySelectorAll('section, #work, #home-hero');
-        sections.forEach(section => observer.observe(section));
+        window.addEventListener('scroll', updateActiveSection);
+        // Call once to set initial state
+        updateActiveSection();
 
-        return () => observer.disconnect();
+        return () => {
+            window.removeEventListener('scroll', updateActiveSection);
+        };
     });
 </script>
 
