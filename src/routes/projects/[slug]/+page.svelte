@@ -3,6 +3,7 @@
 	import { fade, fly } from 'svelte/transition';
     import { ExternalLink, Download } from 'lucide-svelte';
     import type { PageData } from './$types';
+    import { getTagCategory } from '$lib/utils';
 
 	let { data } = $props<{ data: PageData }>();
 </script>
@@ -91,7 +92,7 @@
 				</div>
 			{/if}
 
-            <!-- Tech Specs -->
+			<!-- Tech Specs -->
 			<div class="bg-card border border-border p-8 rounded-3xl space-y-6">
 				<h3 class="text-lg font-semibold flex items-center gap-2">
 					<span class="w-2 h-8 bg-primary rounded-full"></span>
@@ -101,7 +102,7 @@
                     <!-- Example dynamic specs based on tags or other fields -->
                     {#each data.project.tags as tag}
 					<div class="flex flex-col">
-						<span class="text-xs text-muted-foreground uppercase tracking-wider">Technology</span>
+						<span class="text-xs text-muted-foreground uppercase tracking-wider">{getTagCategory(tag)}</span>
 						<span class="font-medium">{tag}</span>
 					</div>
                     {/each}
