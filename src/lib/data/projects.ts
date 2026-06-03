@@ -62,7 +62,7 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'photo-sharing',
-		title: 'HomeWidgey',
+		title: 'Widgey',
 		category: 'Flutter',
 		tags: ['Flutter', 'Android', 'Firebase'],
 		heroImage: '/images/homewidgey/hw_screenshot1.png',
